@@ -1,6 +1,6 @@
 # AperoCycloBot_MastoPy
 AperoCycloBot is a simple Python script designed to reblog toots from hashtag #AperoCycloParis.
-It's live on https://masto.bike/@AperoCycloParis .
+It's live on https://masto.bike/@AperoCycloParis
 
 This script can easily be modified to work for different hashtags.
 
