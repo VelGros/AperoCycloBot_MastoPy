@@ -7,8 +7,6 @@ mastodon = Mastodon(access_token = masto_auth_cfg.readline(), api_base_url="mast
 masto_auth_cfg.close() # Close auth token file
 Mastodon = mastodon
 
-logs = open("AperoCycloBot.log", 'a')
-
 # PROCESSING
 try:
     # Read last stored toot ID from file
@@ -18,7 +16,7 @@ try:
 
     # Gather ID of the last toot posted with hashtag AperoCycloParis since lastToot
     searchResult = str((Mastodon.timeline_hashtag("AperoCycloParis", local=True, since_id=lastToot))[0].id)
-    logs.write(datetime.now().strftime("%d.%m.%Y %H:%M:%S")+" - Newer toot found: "+searchResult+"\n")
+    print(datetime.now().strftime("%d.%m.%Y %H:%M:%S")+" - Newer toot found: "+searchResult+"\n")
 
     # Reblog
     Mastodon.status_reblog(searchResult)
@@ -29,7 +27,6 @@ try:
     lastToot_txt.close()
     
 except IndexError: 
-  logs.write((datetime.now().strftime("%d.%m.%Y %H:%M:%S")+" - No new toot found \n"))
+  print((datetime.now().strftime("%d.%m.%Y %H:%M:%S")+" - No new toot found \n"))
 
-logs.close()
 
