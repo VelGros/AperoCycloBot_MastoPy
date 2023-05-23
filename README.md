@@ -10,5 +10,5 @@ This script can easily be modified to work for different hashtags.
  * Mastodon.py module
  * Mastodon account with auth token
 
-# Install Mastodon.py module:
+# Install Mastodon.py module
   pip install Mastodon.py
